@@ -11,7 +11,7 @@ fn main() {
             Ok(mut stream) => {
                 let mut buf = [0; 512];
                 stream.read(&mut buf).unwrap();
-                stream.write("+PONG/r/n".as_bytes()).unwrap();
+                stream.write("+PONG\r\n".as_bytes()).unwrap();
                 println!("accepted new connection");
             }
             Err(e) => {
